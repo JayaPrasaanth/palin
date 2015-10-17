@@ -1,20 +1,20 @@
-#include<stdio.h>
-#include<string.h>
-void main()
+#include <stdio.h>
+ 
+int main()
 {
-  char a[10],b[10];
-  int c;
-  printf("Enter the string");
-  scanf("%s",a);
-  strcpy(b,a);
-  strrev(b);
-  c=strcmp(a,b);
-  if(c==0)
-   {
-     printf("The entered string is a palindrome");
-   }
-  else
-   {
-    printf("The entered string is not a palindrome");
-   }
+   int n, reverse = 0, temp;
+   scanf("%d",&n);
+   temp = n;
+   while( temp!= 0 )
+    {
+      reverse = reverse * 10;
+      reverse = reverse + temp%10;
+      temp = temp/10;
+    }
+   if ( n == reverse )
+      printf("%d is a palindrome number.\n", n);
+   else
+      printf("%d is not a palindrome number.\n", n);
+ 
+   return 0;
 }
